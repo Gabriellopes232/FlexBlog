@@ -1,3 +1,4 @@
+/* Variaveis das cores */
 :root {
     --Background-blue-Dark: #122ab2;
     --Background-blue-Bright: #2c70ff;
@@ -8,35 +9,51 @@
     --Color-gray-Soft: #a4a4a4;
     --Color-gray-Strong: #7c7c7c;
     --Color-Black-Bright: #222222;
+
 }
 
+/* Gerais - Reset */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Nunito, sans-serif;
-    color: var(--Color-Black-Bright)
+body,
+h1,
+h2,
+p,
+ul,
+li,
+a {
+    margin: 0;
+    padding: 0;
 }
 
-ul {
-    list-style: none;
+body {
+    font-family: 'Nunito', Helvetica, Arial, sans-serif;
+    color: var(--Color-Black-Bright);
 }
 
 a {
     text-decoration: none;
 }
 
-img {
-    display: block;
-    width: 100%;
+ul {
+    list-style: none;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Informação */
 .superinfo-bg {
-    background: var(--Background-blue-Dark);
+    background-color: var(--Background-blue-Dark);
     color: #fff;
+}
+
+.superinfo a {
+    color: white;
 }
 
 .superinfo {
@@ -53,12 +70,9 @@ img {
     margin: 0 10px 10px 10px;
 }
 
-.superinfo a {
-    color: #fff;
-}
-
+/* Menu */
 .menu-bg {
-    background: var(--Background-blue-Bright)
+    background-color: var(--Background-blue-Bright);
 }
 
 .menu {
@@ -72,7 +86,7 @@ img {
 }
 
 .menu a {
-    color: #fff;
+    color: white;
 }
 
 .menu-logo a {
@@ -96,6 +110,8 @@ img {
     color: var(--Background-blue-Dark);
 }
 
+/* Introdução */
+
 .introducao {
     font-size: 3em;
     line-height: 1;
@@ -104,6 +120,7 @@ img {
     padding: 60px 10px;
 }
 
+/* Sobre */
 .sobre {
     border-top: 2px solid var(--Background-blue-Dark);
     border-bottom: 2px solid var(--Background-blue-Dark);
@@ -119,7 +136,7 @@ img {
     margin: 0 10px;
 }
 
-.superinfo h1 {
+.sobre-info h1 {
     font-size: 3em;
     margin-bottom: .5em;
 }
@@ -135,6 +152,8 @@ img {
     flex: 1 1 160px;
     margin: 0 10px;
 }
+
+/* Produtos */
 
 .produtos {
     max-width: 960px;
@@ -176,6 +195,8 @@ img {
     border-top: 8px solid var(--Row-blue);
 }
 
+/* Preço */
+
 .preco {
     background: var(--Background-Gray-Soft);
     padding: 60px;
@@ -186,7 +207,7 @@ img {
 
 .preco-item {
     flex: 1 1 260px;
-    border: 4px solid #fff;
+    border: 4px solid white;
     padding: 20px;
     margin: 10px;
 }
@@ -206,7 +227,7 @@ img {
     font-size: 3em;
     font-weight: bold;
     padding: 10px 0 5px 0;
-    border-top: 4px solid #fff;
+    border-top: 4px solid white;
 }
 
 .preco-item sup {
@@ -216,8 +237,9 @@ img {
 .preco-item ul {
     max-width: 300px;
     margin: 20px auto;
-    font-size: 1.25rem;
+    font-size: 1.25em;
     font-style: italic;
+    color: var(--Color-gray-Strong);
 }
 
 .preco-item li {
@@ -262,7 +284,10 @@ img {
     .preco .preco-item:nth-child(2) {
         order: -1;
     }
+
 }
+
+/* Qualidade */
 
 .qualidade {
     max-width: 960px;
@@ -290,16 +315,16 @@ img {
     margin-right: 10px;
 }
 
-.qualidade-item:nth-child(3n+1) h2::before {
+.qualidade-item:nth-of-type(3n+1) h2::before {
     background: var(--Row-Purple);
 }
 
-.qualidade-item:nth-child(3n+1) h2::before {
+.qualidade-item:nth-of-type(3n+2) h2::before {
     background: var(--Row-Pink);
 }
 
-.qualidade-item:nth-child(3n+1) h2::before {
-    background: var(--Row-blue);
+.qualidade-item:nth-of-type(3n+3) h2::before {
+    background: var(--Row-blue)
 }
 
 .qualidade-item p {
@@ -308,9 +333,10 @@ img {
     color: var(--Color-gray-Strong);
 }
 
+/* Newsletter*/
 .newsletter {
     background: var(--Background-Gray-Soft);
-    padding: 60px calc((100% - 960px)/2);
+    padding: 60px calc((100% - 960px) / 2);
     display: flex;
     flex-wrap: wrap;
 }
@@ -329,7 +355,7 @@ img {
     font-size: 1.25em;
     font-style: italic;
     max-width: 230px;
-    color: var(--Color-gray-Soft);
+    color: var(--Color-gray-Strong);
     margin-bottom: 10px;
 }
 
@@ -343,7 +369,7 @@ img {
 
 .newsletter-form input {
     flex: 3 1 200px;
-    font-family: Nunito, Arial, Helvetica, sans-serif;
+    font-family: 'Nunito', Helvetica, Arial, sans-serif;
     font-size: 1.25em;
     color: var(--Color-gray-Strong);
     font-style: italic;
@@ -356,21 +382,25 @@ img {
 
 .newsletter-form button {
     flex: 1 1 260px;
-    font-family: Nunito, Arial, Helvetica, sans-serif;
+    font-family: 'Nunito', Helvetica, Arial, sans-serif;
     font-size: 2.25em;
     font-weight: bold;
-    border: 0px;
+    text-transform: uppercase;
     background: var(--Background-blue-Bright);
-    color: #fff;
-    padding: 15px 10px;
+    color: white;
     margin: 0px;
+    cursor: pointer;
+    border: 0px;
+    padding: 15px 10px;
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
     .newsletter-form button {
         font-size: 1.25em;
     }
 }
+
+/* Footer */
 
 .footer {
     display: flex;
@@ -383,5 +413,5 @@ img {
     flex: 1;
     text-align: center;
     font-size: 2.25em;
-    color: #fff;
+    color: white;
 }
